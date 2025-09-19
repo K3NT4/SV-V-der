@@ -9,7 +9,7 @@
 
     if (isNaN(lat) || isNaN(lon)) return;
 
-    // Stäng av Leaflets inbyggda attribution – vi visar egen under kartan
+    // Ingen inbyggd attribution – vi visar en låst rad under kartan
     var map = L.map(el, { scrollWheelZoom: false, attributionControl: false });
     map.setView([lat, lon], 12);
 
@@ -21,9 +21,7 @@
     setTimeout(function(){ map.invalidateSize(); }, 150);
   }
 
-  function scan() {
-    document.querySelectorAll(".svv-map").forEach(initMap);
-  }
+  function scan() { document.querySelectorAll(".svv-map").forEach(initMap); }
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", scan);
@@ -31,7 +29,5 @@
     scan();
   }
 
-  // Stöd för dynamisk inladdning (block-editor/SPAs)
-  var observer = new MutationObserver(function () { scan(); });
-  observer.observe(document.documentElement, { childList: true, subtree: true });
+  new MutationObserver(scan).observe(document.documentElement, { childList: true, subtree: true });
 })();

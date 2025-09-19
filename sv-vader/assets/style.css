@@ -12,5 +12,5 @@
 .svv-map-attrib a{text-decoration:none}
 .svv-map-link{margin-top:2px;font-size:13px}
 
-/* Dölj Leaflets standard-attribution i kartan – vi visar egen under kartan */
+/* Dölj ev. Leaflet-attribution i hörnet om något tema forcerar den */
 .leaflet-control-attribution{display:none !important;}
