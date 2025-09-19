@@ -7,29 +7,10 @@
 .svv-meta{font-size:14px;opacity:.85;display:flex;gap:12px;flex-wrap:wrap}
 
 /* Karta */
-.svv-map {
-  width: 100%;
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-top: 10px;
-}
+.svv-map{width:100%;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;margin-top:10px}
+.svv-map-attrib{margin-top:6px;font-size:12px;opacity:.8}
+.svv-map-attrib a{text-decoration:none}
+.svv-map-link{margin-top:2px;font-size:13px}
 
-/* Egen attribution under kartan */
-.svv-map-attrib{
-  margin-top: 6px;
-  font-size: 12px;
-  opacity: .8;
-}
-.svv-map-attrib a { text-decoration: none; }
-
-/* Länk under kartan */
-.svv-map-link {
-  margin-top: 2px;
-  font-size: 13px;
-}
-
-/* Om något tema forcerar Leaflet-attribution i hörnet, gör den osynlig */
-.leaflet-control-attribution{
-  display: none !important; /* Vi visar attributionen nedanför kartan istället */
-}
+/* Dölj Leaflets standard-attribution i kartan – vi visar egen under kartan */
+.leaflet-control-attribution{display:none !important;}
